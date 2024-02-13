@@ -3,10 +3,11 @@ import Image from "next/image";
 
 export default function Home() {
   const getUsers = async () => {
-    const res = await fetch("http://localhost:8080/users");
-    console.log(res.json());
+    const res = await fetch("http://localhost:8080");
+    res.json().then((d) => console.log(d));
   };
   getUsers();
+  
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
